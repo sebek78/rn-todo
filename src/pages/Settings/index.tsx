@@ -1,12 +1,12 @@
 import React from 'react';
 import {Button} from 'react-native';
-import {TodoFormScreenProps} from '../../types';
+import {SettingsScreenProps} from '../../types';
 
-const TodoForm = ({navigation}: TodoFormScreenProps) => (
+const Settings = ({navigation}: SettingsScreenProps) => (
   <Button
     title="Back to todo list"
     onPress={() => navigation.navigate('HomeScreen')}
   />
 );
 
-export default TodoForm;
+export default Settings;
