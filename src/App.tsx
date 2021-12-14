@@ -1,37 +1,24 @@
 import React from 'react';
-import {Button} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import HomeScreen from './pages/HomeScreen';
+import TodoForm from './pages/TodoForm';
 
 const Stack = createNativeStackNavigator();
-
-const TodosList = ({navigation}: any) => (
-  <Button
-    title="Add new todo"
-    onPress={() => navigation.navigate('TodoForm')}
-  />
-);
-
-const TodoForm = ({navigation}: any) => (
-  <Button
-    title="Back to todo list"
-    onPress={() => navigation.navigate('TodoList')}
-  />
-);
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="TodoList">
+      <Stack.Navigator initialRouteName="HomeScreen">
         <Stack.Screen
-          name="TodoList"
-          component={TodosList}
-          options={{title: 'To do:'}}
+          name="HomeScreen"
+          component={HomeScreen}
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name="TodoForm"
           component={TodoForm}
-          options={{title: 'Add new Todo:'}}
+          options={{headerShown: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>
